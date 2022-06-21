@@ -1,4 +1,4 @@
-![Github Intro](https://raw.githubusercontent.com/Justinkarso/Justinkarso/main/github-intro.gif)
+![Hey there, I am Justin Karsopawiro. A passionate front end developer!](https://raw.githubusercontent.com/Justinkarso/Justinkarso/main/github-intro-banner.gif)
 
 ## Blogs
 
