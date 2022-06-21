@@ -1,4 +1,4 @@
-![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif](https://i.ibb.co/2cBRw9G/github-intro.gif)
+![Github Intro](https://raw.githubusercontent.com/Justinkarso/Justinkarso/main/github-intro.gif)
 
 ## Blog
 
