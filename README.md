@@ -1,4 +1,6 @@
-### Hi there 👋
+![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif](https://i.ibb.co/2cBRw9G/github-intro.gif)
+
+## Blog
 
 <!--
 **Justinkarso/Justinkarso** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
