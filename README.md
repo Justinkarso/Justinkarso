@@ -4,7 +4,6 @@
 
 - 🔭 [How to create a React app with Express from scratch](https://dev.to/justinkarso/how-to-create-a-react-app-with-express-from-scratch-3a27)
 - 🤔 [Strapi v4 - Extend core controller and create custom routes](https://dev.to/justinkarso/strapi-v4-extend-core-controller-and-create-custom-routes-18kc)
-- 🚀 [NextJS 12 - Newest features](https://www.blueflamingos.nl/blog/nextjs-12)
 
 ## Socials
 
