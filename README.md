@@ -13,7 +13,6 @@
 - [Dev.to](https://dev.to/justinkarso)
 
 ## Recent Projects
-- [Devly (Bang powerd search engine)](https://devly.app)
 - [Webvork](https://webvork.nl)
 - [Stralend Schoon](https://stralend-schoon.com)
 - [RK Formule](https://rkformule.nl)
