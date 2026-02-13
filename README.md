@@ -1,21 +1,19 @@
 ![Hey there, I am Justin Karsopawiro. A passionate front end developer!](https://raw.githubusercontent.com/Justinkarso/Justinkarso/main/github-intro-banner.gif)
 
-## Blogs
-
-- 🔭 [How to create a React app with Express from scratch](https://dev.to/justinkarso/how-to-create-a-react-app-with-express-from-scratch-3a27)
-- 🤔 [Strapi v4 - Extend core controller and create custom routes](https://dev.to/justinkarso/strapi-v4-extend-core-controller-and-create-custom-routes-18kc)
-
 ## Socials
 
 - [LinkedIn](https://www.linkedin.com/in/justinkarso)
 - [Github](https://github.com/Justinkarso)
 - [Twitter](https://twitter.com/karso_justin)
 - [Dev.to](https://dev.to/justinkarso)
+- [Webvork](https://www.webvork.nl)
+- [Portfolio](https://www.justinkarso.nl)
 
 ## Recent Projects
 - [Webvork](https://webvork.nl)
 - [Stralend Schoon](https://stralend-schoon.com)
 - [RK Formule](https://rkformule.nl)
+
 
 ## Technologies
 
