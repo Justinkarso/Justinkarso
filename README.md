@@ -1,34 +1,73 @@
 ![Hey there, I am Justin Karsopawiro. A passionate front end developer!](https://raw.githubusercontent.com/Justinkarso/Justinkarso/main/github-intro-banner.gif)
 
-## Socials
+<div align="center">
 
-- [LinkedIn](https://www.linkedin.com/in/justinkarso)
-- [Github](https://github.com/Justinkarso)
-- [Twitter](https://twitter.com/karso_justin)
-- [Dev.to](https://dev.to/justinkarso)
-- [Webvork](https://www.webvork.nl)
-- [Portfolio](https://www.justinkarso.nl)
+[![](https://img.shields.io/badge/-🧬%20My%20Website-000)](https://www.justinkarso.nl)
+[![](https://img.shields.io/badge/-LinkedIn-000?&logo=LinkedIn&logoColor=0A66C2)](https://www.linkedin.com/in/justinkarso)
+[![](https://img.shields.io/badge/-GitHub-000?&logo=GitHub&logoColor=fff)](https://github.com/Justinkarso)
+[![](https://img.shields.io/badge/-Twitter-000?&logo=X&logoColor=fff)](https://twitter.com/karso_justin)
+[![](https://img.shields.io/badge/-Dev.to-000?&logo=devdotto&logoColor=fff)](https://dev.to/justinkarso)
+[![](https://img.shields.io/badge/-Webvork-000?&logo=googlechrome&logoColor=fff)](https://www.webvork.nl)
 
-## Recent Projects
-- [Webvork](https://webvork.nl)
-- [Stralend Schoon](https://stralend-schoon.com)
-- [RK Formule](https://rkformule.nl)
+</div>
+
+---
+
+### 🧑‍💻 About Me
+
+I'm a web developer based in the Netherlands, building modern web experiences with React, TypeScript, and Node.js. I love exploring new technologies — from Rust and WASM to AI-powered tools.
+
+---
+
+### 🛠 Languages & Technologies
+
+**Languages**
+
+![JavaScript](https://img.shields.io/badge/-JavaScript-000?&logo=JavaScript)
+![TypeScript](https://img.shields.io/badge/-TypeScript-000?&logo=TypeScript)
+![Rust](https://img.shields.io/badge/-Rust-000?&logo=Rust)
+![Python](https://img.shields.io/badge/-Python-000?&logo=Python)
+![SQL](https://img.shields.io/badge/-SQL-000?&logo=MySQL)
+![HTML5](https://img.shields.io/badge/-HTML5-000?&logo=html5)
+![CSS3](https://img.shields.io/badge/-CSS3-000?&logo=css3)
+![GraphQL](https://img.shields.io/badge/-GraphQL-000?&logo=graphql&logoColor=E10098)
+
+**Frameworks & Libraries**
+
+![React](https://img.shields.io/badge/-React-000?&logo=React)
+![Next.js](https://img.shields.io/badge/-Next.js-000?&logo=nextdotjs)
+![Node.js](https://img.shields.io/badge/-Node.js-000?&logo=node.js)
+
+**Infrastructure & Tools**
+
+![AWS](https://img.shields.io/badge/-AWS-000?&logo=Amazon-AWS&logoColor=F90)
+![Docker](https://img.shields.io/badge/-Docker-000?&logo=Docker)
+![DigitalOcean](https://img.shields.io/badge/-DigitalOcean-000?&logo=digitalocean)
+![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-000?&logo=postgresql)
+![MySQL](https://img.shields.io/badge/-MySQL-000?&logo=mysql)
+![Redis](https://img.shields.io/badge/-Redis-000?&logo=Redis)
+![Git](https://img.shields.io/badge/-Git-000?&logo=git)
+![GitHub](https://img.shields.io/badge/-GitHub-000?&logo=github)
+
+---
+
+### 🚀 Recent Projects
+
+| Project | Description |
+|---------|-------------|
+| [**Webvork**](https://webvork.nl) | Web development agency |
+| [**Stralend Schoon**](https://stralend-schoon.com) | Cleaning service platform |
+| [**RK Formule**](https://rkformule.nl) | Business website |
+
+---
+
+### 📊 GitHub Stats
+
+<div align="center">
+  
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=Justinkarso&theme=github-dark-blue&hide_border=true&background=0d1117" />
 
 
-## Technologies
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=Justinkarso&theme=github-compact&hide_border=true&bg_color=0d1117&color=58a6ff&line=58a6ff&point=fff" />
 
-![JavaScript](https://img.shields.io/badge/-JavaScript-black?style=flat-square&logo=javascript)
-![Nodejs](https://img.shields.io/badge/-Nodejs-black?style=flat-square&logo=Node.js)
-![React](https://img.shields.io/badge/-React-black?style=flat-square&logo=react)
-![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=flat-square&logo=css3)
-![TypeScript](https://img.shields.io/badge/-TypeScript-007ACC?style=flat-square&logo=typescript)
-![GraphQL](https://img.shields.io/badge/-GraphQL-E10098?style=flat-square&logo=graphql)
-![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-336791?style=flat-square&logo=postgresql)
-![MySQL](https://img.shields.io/badge/-MySQL-black?style=flat-square&logo=mysql)
-![Heroku](https://img.shields.io/badge/-Heroku-430098?style=flat-square&logo=heroku)
-![DigitalOcean](https://img.shields.io/badge/-Digital%20Ocean-darkblue?style=flat-square&logo=digitalocean)
-![Git](https://img.shields.io/badge/-Git-black?style=flat-square&logo=git)
-![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github)
-![GitLab](https://img.shields.io/badge/-GitLab-FCA121?style=flat-square&logo=gitlab)
-![BitBucket](https://img.shields.io/badge/-BitBucket-darkblue?style=flat-square&logo=bitbucket)
+</div>
