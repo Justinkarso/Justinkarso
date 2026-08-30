@@ -63,9 +63,9 @@ I'm a web developer based in the Netherlands, building modern web experiences wi
 
 | Project | Description |
 |---------|-------------|
+| [**Docframe**](https://docframe.dev) | AI doc generation |
+| [**Webvork**](https://recurno.com) | Monthly subscription tracker |
 | [**Webvork**](https://webvork.nl) | Web development agency |
-| [**Stralend Schoon**](https://stralend-schoon.com) | Cleaning service platform |
-| [**RK Formule**](https://rkformule.nl) | Business website |
 | [**portzap**](https://github.com/Justinkarso/portzap) | Fast cross-platform port management tool, written in Rust |
 | [**makesite**](https://github.com/Justinkarso/makesite) | Minimal static site generator in Rust: write Markdown, get a website |
 | [**maildrop**](https://github.com/Justinkarso/maildrop) | Resend-like API over free SMTP, with auto-detected settings |
