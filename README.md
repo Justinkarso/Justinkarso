@@ -1,4 +1,6 @@
-![Hey there, I am Justin Karsopawiro. A passionate front end developer!](https://raw.githubusercontent.com/Justinkarso/Justinkarso/main/github-intro-banner.gif)
+<!-- vgpu:banner:start -->
+<p align="center"><img src="assets/banner.gif" alt="Justinkarso" width="960"></p>
+<!-- vgpu:banner:end -->
 
 <div align="center">
 
@@ -11,13 +13,17 @@
 
 </div>
 
----
+<!-- vgpu:rule-1:start -->
+<p align="center"><img src="assets/rule-1.gif" alt="" width="960"></p>
+<!-- vgpu:rule-1:end -->
 
 ### 🧑‍💻 About Me
 
 I'm a web developer based in the Netherlands, building modern web experiences with React, TypeScript, and Node.js. I love exploring new technologies — from Rust and WASM to AI-powered tools.
 
----
+<!-- vgpu:rule-2:start -->
+<p align="center"><img src="assets/rule-2.gif" alt="" width="960"></p>
+<!-- vgpu:rule-2:end -->
 
 ### 🛠 Languages & Technologies
 
@@ -49,7 +55,9 @@ I'm a web developer based in the Netherlands, building modern web experiences wi
 ![Git](https://img.shields.io/badge/-Git-000?&logo=git)
 ![GitHub](https://img.shields.io/badge/-GitHub-000?&logo=github)
 
----
+<!-- vgpu:rule-3:start -->
+<p align="center"><img src="assets/rule-3.gif" alt="" width="960"></p>
+<!-- vgpu:rule-3:end -->
 
 ### 🚀 Recent Projects
 
@@ -58,16 +66,29 @@ I'm a web developer based in the Netherlands, building modern web experiences wi
 | [**Webvork**](https://webvork.nl) | Web development agency |
 | [**Stralend Schoon**](https://stralend-schoon.com) | Cleaning service platform |
 | [**RK Formule**](https://rkformule.nl) | Business website |
+| [**portzap**](https://github.com/Justinkarso/portzap) | Fast cross-platform port management tool, written in Rust |
+| [**makesite**](https://github.com/Justinkarso/makesite) | Minimal static site generator in Rust: write Markdown, get a website |
+| [**maildrop**](https://github.com/Justinkarso/maildrop) | Resend-like API over free SMTP, with auto-detected settings |
+| [**EnvShare**](https://github.com/Justinkarso/EnvShare) | Peer-to-peer `.env` sharing on your own network, no cloud |
 
----
+<!-- vgpu:rule-4:start -->
+<p align="center"><img src="assets/rule-4.gif" alt="" width="960"></p>
+<!-- vgpu:rule-4:end -->
 
-### 📊 GitHub Stats
+<!-- vgpu:year:start -->
+<p align="center"><img src="assets/year.gif" alt="a year of commits" width="960"></p>
+<!-- vgpu:year:end -->
 
-<div align="center">
-  
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=Justinkarso&theme=github-dark-blue&hide_border=true&background=0d1117" />
+### 🖥 About the art on this page
 
+None of it is an image anybody drew. The banner, the panel above, and the four
+lines between the sections are WGSL shaders, rendered headless on a GPU by
+[vgpu](https://vgpu.sh) and re-rendered every night by a workflow. The fog is
+domain-warped noise. The tiles are days from my contribution graph, pulled from
+the GitHub API and used as texture rather than as a chart.
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=Justinkarso&theme=github-compact&hide_border=true&bg_color=0d1117&color=58a6ff&line=58a6ff&point=fff" />
-
-</div>
+The shaders are generated rather than written: every build emits fresh WGSL next
+to each GIF, with the days baked in as a constant array and the name packed into
+a 5x7 bitmap font. That leaves each shader with a single uniform, the phase of
+the loop, which is what makes the animations join back to their first frame
+exactly.
