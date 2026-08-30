@@ -8,6 +8,12 @@ const { GIFEncoder, quantize, applyPalette } = gifenc;
 // two megabyte GIF and a few hundred kilobytes.
 const TOLERANCE = 26;
 
+// GitHub's dark canvas. Quantisation would otherwise drift the flat background
+// by a value or two and draw a faint rectangle around every piece, so the exact
+// colour gets its own palette entry and everything close to it snaps there.
+const PAGE = [13, 17, 23];
+const PAGE_TOLERANCE = 10;
+
 export function encodeGif(frames, width, height, fps, colors = 128) {
   const pixels = width * height;
   const sampleStride = Math.max(1, Math.floor(frames.length / 8));
@@ -21,7 +27,9 @@ export function encodeGif(frames, width, height, fps, colors = 128) {
 
   // One palette for the whole loop. Per-frame palettes are slightly sharper but
   // they make the animation shimmer, which is worse than a little banding.
-  const palette = quantize(samples.subarray(0, offset), colors - 1, { format: "rgb565" });
+  const palette = quantize(samples.subarray(0, offset), colors - 2, { format: "rgb565" });
+  const pageIndex = palette.length;
+  palette.push(PAGE);
   const transparentIndex = palette.length;
   palette.push([0, 0, 0]);
 
@@ -36,6 +44,14 @@ export function encodeGif(frames, width, height, fps, colors = 128) {
 
   for (const frame of frames) {
     const indexed = applyPalette(frame, palette, "rgb565");
+    for (let p = 0; p < pixels; p++) {
+      const i = p * 4;
+      const distance =
+        Math.abs(frame[i] - PAGE[0]) +
+        Math.abs(frame[i + 1] - PAGE[1]) +
+        Math.abs(frame[i + 2] - PAGE[2]);
+      if (distance <= PAGE_TOLERANCE) indexed[p] = pageIndex;
+    }
     if (displayed) {
       for (let p = 0; p < pixels; p++) {
         const i = p * 4;

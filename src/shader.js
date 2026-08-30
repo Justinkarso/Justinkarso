@@ -38,6 +38,9 @@ struct Params { time: f32 };
 @group(0) @binding(0) var<uniform> params: Params;
 
 const TAU = 6.2831853;
+// GitHub's dark canvas. Every piece starts here and only ever adds light, so
+// the edges of the image dissolve into the page instead of drawing a box.
+const PAGE = vec3f(0.051, 0.0667, 0.0902);
 const RES = vec2f(${f(width)}, ${f(height)});
 const COLS = ${cols};
 const ROWS = ${ROWS};
@@ -168,9 +171,9 @@ fn constellation(px: vec2f, phase: f32) -> vec3f {
   let n = nebula(p * 2.1 + vec2f(3.0, 1.0), phase);
   let depth = nebula(p * 1.05 - vec2f(2.0, 4.0), phase + 1.7);
   let body = pow(clamp(n * 1.15 - 0.12, 0.0, 1.0), 2.1);
-  var color = palette(0.20 + 0.75 * n) * body * (0.35 + 0.9 * depth);
-  color += vec3f(0.012, 0.018, 0.05);
-  color *= 0.35 + 0.85 * smoothstep(0.85, 0.05, length(p * vec2f(0.60, 1.3)));
+  var fog = palette(0.20 + 0.75 * n) * body * (0.35 + 0.9 * depth);
+  fog *= 0.35 + 0.85 * smoothstep(0.85, 0.05, length(p * vec2f(0.60, 1.3)));
+  var color = PAGE + fog;
 
   color += constellation(px, phase);
 
@@ -202,9 +205,14 @@ fn constellation(px: vec2f, phase: f32) -> vec3f {
 
   // A little static dither. Enough to break banding in the dark corners, small
   // enough that the GIF still compresses.
+  // Everything the shader added fades out at the border, so the last row of
+  // pixels is the page colour exactly and the image has no visible rectangle.
+  let edge = smoothstep(0.0, 0.035, uv.x) * smoothstep(1.0, 0.965, uv.x) *
+             smoothstep(0.0, 0.06, uv.y) * smoothstep(1.0, 0.94, uv.y);
+  color = PAGE + (color - PAGE) * edge;
   color += (hash21(px) - 0.5) * 0.006;
 
-  return vec4f(pow(clamp(color, vec3f(0.0), vec3f(1.0)), vec3f(0.92)), 1.0);
+  return vec4f(clamp(color, vec3f(0.0), vec3f(1.0)), 1.0);
 }
 `;
 

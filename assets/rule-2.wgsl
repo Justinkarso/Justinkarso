@@ -3,6 +3,9 @@ struct Params { time: f32 };
 @group(0) @binding(0) var<uniform> params: Params;
 
 const TAU = 6.2831853;
+// GitHub's dark canvas. Every piece starts here and only ever adds light, so
+// the edges of the image dissolve into the page instead of drawing a box.
+const PAGE = vec3f(0.051, 0.0667, 0.0902);
 
 fn hash21(p: vec2f) -> f32 {
   var p3 = fract(vec3f(p.x, p.y, p.x) * 0.1031);
@@ -61,11 +64,11 @@ const SEED = 7.3;
   let trail = exp(-max(0.0, head - px.x) / 260.0) * 0.35;
 
   let energy = 0.10 + 0.35 * fbm(vec2f(px.x * 0.01 - SEED, sin(phase) * 0.6)) + charge + trail;
-  var color = palette(0.35 + 0.6 * energy) * (core * (0.5 + 1.6 * energy) + halo * 0.18 * energy);
+  var filament = palette(0.35 + 0.6 * energy) * (core * (0.5 + 1.6 * energy) + halo * 0.18 * energy);
 
   // Fade both ends so the strip has no hard edges against the page.
-  color *= smoothstep(0.0, 0.12, uv.x) * smoothstep(1.0, 0.88, uv.x);
-  color += (hash21(px) - 0.5) * 0.004;
+  filament *= smoothstep(0.0, 0.12, uv.x) * smoothstep(1.0, 0.88, uv.x);
+  var color = PAGE + filament + (hash21(px) - 0.5) * 0.004;
 
-  return vec4f(pow(clamp(color, vec3f(0.0), vec3f(1.0)), vec3f(0.92)), 1.0);
+  return vec4f(clamp(color, vec3f(0.0), vec3f(1.0)), 1.0);
 }

@@ -6,6 +6,9 @@ struct Params { time: f32 };
 @group(0) @binding(0) var<uniform> params: Params;
 
 const TAU = 6.2831853;
+// GitHub's dark canvas. Every piece starts here and only ever adds light, so
+// the edges of the image dissolve into the page instead of drawing a box.
+const PAGE = vec3f(0.051, 0.0667, 0.0902);
 
 fn hash21(p: vec2f) -> f32 {
   var p3 = fract(vec3f(p.x, p.y, p.x) * 0.1031);
@@ -73,13 +76,13 @@ const SEED = ${f(seed)};
   let trail = exp(-max(0.0, head - px.x) / 260.0) * 0.35;
 
   let energy = 0.10 + 0.35 * fbm(vec2f(px.x * 0.01 - SEED, sin(phase) * 0.6)) + charge + trail;
-  var color = palette(0.35 + 0.6 * energy) * (core * (0.5 + 1.6 * energy) + halo * 0.18 * energy);
+  var filament = palette(0.35 + 0.6 * energy) * (core * (0.5 + 1.6 * energy) + halo * 0.18 * energy);
 
   // Fade both ends so the strip has no hard edges against the page.
-  color *= smoothstep(0.0, 0.12, uv.x) * smoothstep(1.0, 0.88, uv.x);
-  color += (hash21(px) - 0.5) * 0.004;
+  filament *= smoothstep(0.0, 0.12, uv.x) * smoothstep(1.0, 0.88, uv.x);
+  var color = PAGE + filament + (hash21(px) - 0.5) * 0.004;
 
-  return vec4f(pow(clamp(color, vec3f(0.0), vec3f(1.0)), vec3f(0.92)), 1.0);
+  return vec4f(clamp(color, vec3f(0.0), vec3f(1.0)), 1.0);
 }
 `;
 }
@@ -114,8 +117,7 @@ var<private> levels: array<f32, ${levels.length}> = array<f32, ${levels.length}>
 
   let orbit = vec2f(cos(phase), sin(phase));
   let fog = fbm(p * 1.9 + orbit * 0.22 + vec2f(4.0, 2.0));
-  var color = palette(0.15 + 0.5 * fog) * pow(fog, 2.4) * 0.55;
-  color += vec3f(0.010, 0.014, 0.038);
+  var color = PAGE + palette(0.15 + 0.5 * fog) * pow(fog, 2.4) * 0.55;
 
   let g = (px - ORIGIN) / CELL;
   let col = i32(floor(g.x));
@@ -134,7 +136,7 @@ var<private> levels: array<f32, ${levels.length}> = array<f32, ${levels.length}>
 
       let breathe = 0.82 + 0.18 * sin(phase + f32(col) * 0.24 + f32(row) * 0.62);
       let lit = level * breathe + wave * (0.25 + 0.75 * level);
-      let quiet = vec3f(0.055, 0.075, 0.15) * (1.0 + wave * 2.2);
+      let quiet = PAGE + vec3f(0.02, 0.03, 0.075) * (1.0 + wave * 2.2);
       let tone = palette(0.30 + 0.62 * lit) * (0.35 + 1.25 * lit);
 
       color = mix(color, select(tone, quiet, level <= 0.0001), tile);
@@ -143,10 +145,16 @@ var<private> levels: array<f32, ${levels.length}> = array<f32, ${levels.length}>
     }
   }
 
-  color *= 0.55 + 0.75 * smoothstep(1.05, 0.15, length(p * vec2f(0.55, 1.25)));
+  // Vignette the light, never the page underneath it.
+  color = PAGE + (color - PAGE) * (0.55 + 0.75 * smoothstep(1.05, 0.15, length(p * vec2f(0.55, 1.25))));
+  // Everything the shader added fades out at the border, so the last row of
+  // pixels is the page colour exactly and the image has no visible rectangle.
+  let edge = smoothstep(0.0, 0.035, uv.x) * smoothstep(1.0, 0.965, uv.x) *
+             smoothstep(0.0, 0.06, uv.y) * smoothstep(1.0, 0.94, uv.y);
+  color = PAGE + (color - PAGE) * edge;
   color += (hash21(px) - 0.5) * 0.006;
 
-  return vec4f(pow(clamp(color, vec3f(0.0), vec3f(1.0)), vec3f(0.92)), 1.0);
+  return vec4f(clamp(color, vec3f(0.0), vec3f(1.0)), 1.0);
 }
 `;
 }
