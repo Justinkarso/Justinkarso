@@ -1,0 +1,19 @@
+{
+  "name": "justinkarso-profile",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "GitHub profile README with a banner rendered on the GPU from my contribution graph.",
+  "scripts": {
+    "banner": "node src/build.js",
+    "preview": "node src/build.js --preview"
+  },
+  "dependencies": {
+    "gifenc": "^1.0.3",
+    "vgpu": "^0.3.1"
+  },
+  "allowScripts": {
+    "@vgpu/adapter-node@0.3.1": true,
+    "webgpu@0.4.0": true
+  }
+}
